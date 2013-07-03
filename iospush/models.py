@@ -123,7 +123,8 @@ class Device(models.Model):
             if loc_args:
                 alert_payload['loc-args'] = loc_args
 
-        aps_payload['alert'] = alert_payload
+        if alert:
+            aps_payload['alert'] = alert_payload
         
         if badge:
             aps_payload['badge'] = badge
